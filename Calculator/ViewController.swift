@@ -27,8 +27,15 @@ class ViewController: UIViewController {
                 userHaveTheDot = true
             }
         } else {
-            display.text = digit
-            userIsInTheMiddleOfTyping = true
+            if digit == "." {
+                display.text = "0."
+                userIsInTheMiddleOfTyping = true
+            } else {
+                display.text = digit
+            }
+            if displayValue != 0 {
+                userIsInTheMiddleOfTyping = true
+            }
         }
     }
 
