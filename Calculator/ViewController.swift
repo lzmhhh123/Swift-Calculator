@@ -14,6 +14,14 @@ class ViewController: UIViewController {
     
     var userIsInTheMiddleOfTyping = false
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        brain.addUnaryOperation(named: "✅") { [weak self] in
+            self?.display.textColor = UIColor.green
+            return sqrt($0)
+        }
+    }
+    
     var userHaveTheDot = false
     
     @IBAction func touchDigit(_ sender: UIButton) {
